@@ -1,14 +1,14 @@
 # QRCidadão
 
-## Description
+## Descrição
 
 Um projeto para contribuir com a transparência do uso de recursos públicos e privado, além de contribuir com o processo de gestão de feedbacks, sugestões e denúncias.
 
-## Project Design
+## Design de Projeto
 
 ![Architecture](./qrc_desing.png)
 
-## Technologies
+## Tecnologias
 
 - Frontend:
   - Angular
@@ -22,7 +22,7 @@ Um projeto para contribuir com a transparência do uso de recursos públicos e p
   - Docker
   - AWS
 
-## Requirements
+## Requisitos
 
 - Painel de administração
   - Cadastrar veículo/máquina/estabelecimento
