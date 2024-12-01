@@ -9,6 +9,9 @@ class VeiculoList(generics.ListAPIView):
     queryset = Veiculo.objects.all()
     serializer_class = VeiculoSerializer
     name = "veiculo-list"
+    search_fields = ['placa', 'setor_de_origem']
+    ordering_fields = ['placa', 'setor_de_origem']
+    filterset_fields = ['setor_de_origem', 'esta_ativo']
 
 
 class VeiculoDetail(generics.RetrieveAPIView):
@@ -21,6 +24,7 @@ class DenunciaList(generics.ListAPIView):
     queryset = Denuncia.objects.all()
     serializer_class = DenunciaSerializer
     name = "denuncia-list"
+    search_fields = ['veiculo__placa', '']
 
 
 class DenunciaDetail(generics.RetrieveAPIView):
