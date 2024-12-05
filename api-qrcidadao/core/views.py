@@ -5,7 +5,7 @@ from .models import Veiculo, Denuncia
 from .serializers import VeiculoSerializer, DenunciaSerializer
 
 
-class VeiculoList(generics.ListAPIView):
+class VeiculoList(generics.ListCreateAPIView):
     queryset = Veiculo.objects.all()
     serializer_class = VeiculoSerializer
     name = "veiculo-list"
@@ -14,20 +14,20 @@ class VeiculoList(generics.ListAPIView):
     filterset_fields = ['setor_de_origem', 'esta_ativo']
 
 
-class VeiculoDetail(generics.RetrieveAPIView):
+class VeiculoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Veiculo.objects.all()
     serializer_class = VeiculoSerializer
     name = "veiculo-detail"
 
 
-class DenunciaList(generics.ListAPIView):
+class DenunciaList(generics.ListCreateAPIView):
     queryset = Denuncia.objects.all()
     serializer_class = DenunciaSerializer
     name = "denuncia-list"
     search_fields = ['veiculo__placa', '']
 
 
-class DenunciaDetail(generics.RetrieveAPIView):
+class DenunciaDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Denuncia.objects.all()
     serializer_class = DenunciaSerializer
     name = "denuncia-detail"

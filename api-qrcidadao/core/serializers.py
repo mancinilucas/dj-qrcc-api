@@ -11,10 +11,18 @@ class VeiculoSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['id', 'placa', 'setor_de_origem', 'esta_ativo']
 
 
-class DenunciaSerializer(serializers.HyperlinkedModelSerializer):
+class DenunciaSerializer(serializers.ModelSerializer):
+    # Veículo será preenchido automaticamente
     veiculo = VeiculoSerializer(read_only=True)
+    veiculo_id = serializers.PrimaryKeyRelatedField(
+        queryset=Veiculo.objects.all(), write_only=True, source="veiculo"
+    )
 
     class Meta:
         model = Denuncia
-        fields = ['id', 'data', 'local', 'descricao', 'veiculo']
-        read_only_fields = ['id', 'data']
+        fields = ['id', 'data', 'local', 'descricao', 'veiculo', 'veiculo_id']
+        read_only_fields = ['id', 'data', 'veiculo']
+
+    def create(self, validated_data):
+        # A data é gerada automaticamente no modelo
+        return Denuncia.objects.create(**validated_data)
