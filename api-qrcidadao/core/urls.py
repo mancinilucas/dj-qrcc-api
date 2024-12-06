@@ -10,5 +10,6 @@ urlpatterns = [
     path('denuncias/', views.DenunciaList.as_view(), name='denuncia-list'),
     path('denuncias/<int:pk>/', views.DenunciaDetail.as_view(),
          name='denuncia-detail'),
+    path('denuncias/criar/', views.DenunciaCreate.as_view(), name='denuncia-create'),
     path('', views.ApiRoot.as_view(), name=views.ApiRoot.name),
 ]
