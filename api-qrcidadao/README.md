@@ -81,17 +81,6 @@ This is a system developed with Django and Django REST Framework for managing pu
 ```
 
 
-### Tecnologias e Dependências/Prerequisites
-
-- Python 3.12.4
-- Django 5.1.1
-- Django Rest Framework 3.15.2
-- Django Rest Framework SimpleJWT 5.3.1
-- PyJWT 2.10.1
-- Django-Cors-Headers 4.6.0
-- Django-Filter 24.3
-- DRF-Spectacular 0.28.0
-
 ## Documentação da API / API documentation
 
 #### Api Root
@@ -105,13 +94,13 @@ This is a system developed with Django and Django REST Framework for managing pu
 ```
   GET /api/docs/
 ```
+### Tecnologias e Dependências/Prerequisites
 
-## Tecnologias
 - Python 3.12.4
-- PIP 24.2
-- Django 5.1
+- Django 5.1.1
 - Django Rest Framework 3.15.2
-- Django Filter 24.3
-- Pytest 8.3.3
-- DRF Spectacular 0.27.2
-- Django CORS Headers 4.6.0
+- Django Rest Framework SimpleJWT 5.3.1
+- PyJWT 2.10.1
+- Django-Cors-Headers 4.6.0
+- Django-Filter 24.3
+- DRF-Spectacular 0.28.0
